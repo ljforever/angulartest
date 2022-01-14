@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/angular-1.5.8/angular.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+
+<div  ng-controller="myController">
+<!--    <input ng-model="name1">-->
+<!--    <input ng-model="name2">-->
+<!--    <input ng-model="name3">-->
+<!--    <h1>{{name1}}{{name2}}{{name3}}</h1>-->
+<!--    <ul>-->
+<!--        <li ng-repeat="x in names">{{x}}</li>-->
+<!--    </ul>-->
+
+    <h1>姓氏为 {{lastname}} 家族成员:</h1>
+
+    <ul>
+        <li ng-repeat="x in names">{{x}} {{lastname}}</li>
+    </ul>
+
+</div>
+
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController',function ($scope, $rootScope){
+        // $scope.name1 = "1";
+        // $scope.name2 = "2";
+        // $scope.name3 = "3";
+        // $scope.names = [$scope.name1,$scope.name2,$scope.name3];
+
+        $scope.names = ["Emil", "Tobias", "Linus"];
+        $rootScope.lastname = "Refsnes";
+    })
+</script>
+</html>

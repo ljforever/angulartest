@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/angular-1.5.8/angular.js"></script>
+    <style>
+        input.ng-invalid{
+            background-color: #00bbee;
+        }
+    </style>
+</head>
+<body ng-app="myApp" >
+<div ng-controller="myController">
+    name:<input ng-model="name">
+    <h1>输入的name: {{name}}</h1>
+</div>
+<form name="myform">
+    email:<input type="email" name="myaddress" ng-model="text">
+    <span ng-show="myform.myaddress.$error.email">非法邮箱地址</span>
+
+    <p>是否valid:{{myform.myaddress.$valid}}</p>
+    <p>是否dirty:{{myform.myaddress.$dirty}}</p>
+    <p>touched:{{myform.myaddress.$touched}}</p>
+    输入你的名字:
+    <input name="myName" ng-model="myText" required>
+</form>
+
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController',function ($scope){
+        $scope.name = "zhang2"
+    })
+</script>
+</html>

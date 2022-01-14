@@ -22,4 +22,18 @@ public class IndexController {
         modelAndView.setViewName("/myapp.html");
         return modelAndView;
     }
+
+    @RequestMapping("/model")
+    public ModelAndView modelModelAndView(ModelAndView modelAndView){
+        modelAndView.setViewName("/model.html");
+        return modelAndView;
+    }
+
+    @RequestMapping("/scope")
+    public ModelAndView scopeModelAndView(ModelAndView modelAndView){
+        modelAndView.setViewName("/scope.html");
+        return modelAndView;
+    }
+
+
 }
